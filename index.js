@@ -5,7 +5,14 @@ const http = require('http');
 const server = http.createServer((req, res)=>
 {
     res.writeHead(200,{'content-Type': 'text/html'});
-    res.write('Selamat pagi');
+    //res.write('Selamat pagi');
+    //res.end();
+
+    res.writeHead(200,{'Content-Type':'application/json'})
+    res.write(JSON.stringify({
+        'message' : 'selamat pagi',
+        'status'  : 'succes'
+    }));
     res.end();
 } );
 
