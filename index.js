@@ -9,8 +9,20 @@ const server = http.createServer((req, res)=>
     //res.end();
 
     res.writeHead(200,{'content-Type':'application/json'})
+
+    if(req.url === '/dosen'){
+        message = 'List data dosen';
+        data = ['Ahmad','Hafiz','Yanto'];
+    }else if(req.url === '/mahasiswa'){
+        message = 'list data mahasiswa';
+        data = ['nabila','eric'];
+    }else{
+        message = 'tidak ditemukan';
+        data = [];
+    }
     res.write(JSON.stringify({
-        'message' : 'selamat pagi',
+        'message' : message,
+        'data' : data,
         'status'  : 'succes'
     }));
     res.end();
