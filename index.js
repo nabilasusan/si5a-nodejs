@@ -1,5 +1,5 @@
 // inisialisasi modul http
-const http = require('htpp');
+const http = require('http');
 
 // buat server
 const server = http.createServer((req, res)=>
